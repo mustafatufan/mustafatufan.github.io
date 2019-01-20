@@ -1,1 +1,0 @@
-# mustafatufan.github.io
