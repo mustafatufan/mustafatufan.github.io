@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" type="image/png" href="images/icon.png" />
 	<title>Mustafa Tufan</title>
 </head>
@@ -33,7 +34,6 @@
 				<span class="text-success"><i class="fas fa-tree"></i> Please consider the environment before printing.</span>
 				<br>
 				<a class="btn btn-primary m-1 border border-dark animated pulse delay-5s" href="pdf/mustafatufan.pdf" role="button"><i class="fas fa-file-download"></i> Download</a>
-				<button id="printButton" type="button" class="btn btn-danger m-1 border border-dark" onclick="printThisPage()" data-toggle="tooltip" data-placement="right" title="This feature works best with Chrome."><i class="fas fa-file-alt"></i> Print</button>
 			</div>
 		</div>
 
@@ -52,14 +52,16 @@
 			</div>
 			<div class="col">
 				<p class="text-justify">
-					Hi! I am Mustafa from Turkey, a software engineer with a finance-based master degree. I am always in pursuit of designing the best software and writing the best line of codes. I am passionate about details, continuously think about how to
-					improve myself, where I am and what I do.
+					Hi! I am Mustafa Tufan, a software engineer with a finance-based master degree. I am always in pursuit of designing the best software and writing the best line of codes. I am passionate about details, continuously think about how to improve myself, where I am and what I do.
+				</p>
+				<p class="text-justify">
+					I just moved to Tartu, and also started to work here. Nowadays, I am learning Python and Estonian.
 				</p>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-sm-3">
+			<div class="col-sm-4">
 				<table class="table table-sm table-borderless">
 					<thead>
 						<tr>
@@ -73,17 +75,21 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td class="text-center lead"><i class="fas fa-envelope"></i></td>
+							<td class="text-center lead max-w-30"><i class="fas fa-envelope"></i></td>
 							<td class="align-middle">mustafa@tufan.ee</td>
 						</tr>
 						<tr>
-							<td class="text-center lead"><i class="fas fa-phone"></i></td>
+							<td class="text-center lead max-w-30"><i class="fas fa-phone"></i></td>
 							<td class="align-middle">+372 5784 9331</td>
+						</tr>
+						<tr>
+							<td class="text-center lead max-w-30"><i class="fas fa-home"></i></td>
+							<td class="align-middle">Soinaste 41a, Tartu 50404, Estonia</td>
 						</tr>
 					<tbody>
 				</table>
 			</div>
-			<div class="col-sm-2">
+			<div class="col-sm-4">
 				<table class="table table-sm table-borderless">
 					<thead>
 						<tr>
@@ -97,16 +103,46 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td class="text-center lead"><i class="fab fa-linkedin-in"></i></td>
+							<td class="text-center lead max-w-30"><i class="fab fa-linkedin-in"></i></td>
 							<td class="align-middle"><a href="https://www.linkedin.com/in/mustafatufan">/in/mustafatufan</a></td>
 						</tr>
 						<tr>
-							<td class="text-center lead"><i class="fab fa-github"></i></td>
+							<td class="text-center lead max-w-30"><i class="fab fa-github"></i></td>
 							<td class="align-middle"><a href="https://github.com/mustafatufan">/mustafatufan</a></td>
+						</tr>
+						<tr>
+							<td class="text-center lead max-w-30"><i class="fab fa-docker"></i></td>
+							<td class="align-middle"><a href="https://hub.docker.com/u/mustafatufan">/u/mustafatufan</a></td>
 						</tr>
 					<tbody>
 				</table>
 			</div>
+			<div class="col-sm-4">
+				<table class="table table-sm table-borderless">
+					<thead>
+						<tr>
+							<th colspan="2" scope="col">Personal</th>
+						</tr>
+						<tr>
+							<th colspan="2" scope="col">
+								<hr class="m-0">
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-center lead max-w-30"><i class="fas fa-birthday-cake"></i></td>
+							<td class="align-middle">Nov. 13, 1992</td>
+						</tr>
+						<tr>
+							<td class="text-center lead max-w-30"><i class="fas fa-passport"></i></td>
+							<td class="align-middle">Republic of Turkey</td>
+						</tr>
+					<tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-sm-4">
 				<table class="table table-sm table-borderless">
 					<thead>
@@ -121,21 +157,21 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td class="text-center lead"><i class="fas fa-chart-line"></i></td>
+							<td class="text-center lead max-w-30"><i class="fas fa-chart-line"></i></td>
 							<td class="align-middle">To be part of a top-notch product</td>
 						</tr>
 						<tr>
-							<td class="text-center lead"><i class="fas fa-dna"></i></td>
+							<td class="text-center lead max-w-30"><i class="fas fa-dna"></i></td>
 							<td class="align-middle">To develop an open source project that helps science</td>
 						</tr>
 					<tbody>
 				</table>
 			</div>
-			<div class="col-sm-3">
+			<div class="col-sm-4">
 				<table class="table table-sm table-borderless">
 					<thead>
 						<tr>
-							<th colspan="2" scope="col">Personal</th>
+							<th colspan="2" scope="col">Side Projects</th>
 						</tr>
 						<tr>
 							<th colspan="2" scope="col">
@@ -145,63 +181,44 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td class="text-center lead"><i class="fas fa-birthday-cake"></i></td>
-							<td class="align-middle">Nov. 13, 1992</td>
+							<td class="text-center lead max-w-30"><i class="fas fa-briefcase"></i></td>
+							<td class="align-middle"><a href="https://ionia.ee">Ionia OÜ</a></td>
 						</tr>
 						<tr>
-							<td class="text-center lead"><i class="fas fa-passport"></i></td>
-							<td class="align-middle">Republic of Turkey</td>
+							<td class="text-center lead max-w-30"><i class="fab fa-bitcoin"></i></td>
+							<td class="align-middle"><a href="https://btckit.io">Btckit.io</a></td>
+						</tr>
+						<tr>
+							<td class="text-center lead max-w-30"><i class="fas fa-link"></i></td>
+							<td class="align-middle"><a href="http://aliv.ee">aliv.ee</a></td>
 						</tr>
 					<tbody>
 				</table>
 			</div>
-		</div>
-
-		<div class="row">
-			<div class="col">
+			<div class="col-sm-4">
 				<table class="table table-sm table-borderless">
 					<thead>
 						<tr>
-							<th colspan="4" scope="col">Tech Stack <small class="text-muted d-print-none">that I have worked with so far and be able to deliver an interview project.</small></th>
+							<th colspan="2" scope="col">Passions</th>
 						</tr>
 						<tr>
-							<th colspan="4" scope="col">
+							<th colspan="2" scope="col">
 								<hr class="m-0">
 							</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td class="text-center lead"><i class="fab fa-java"></i></td>
-							<td class="align-middle" colspan="3">Java, Spring Framework, Hibernate, JSP, JSF, PrimeFaces, JasperReports, JUnit, Multithreading, RCP, ADF, EJB</td>
+							<td class="text-center lead max-w-30"><i class="fas fa-flask"></i></td>
+							<td class="align-middle">Science</td>
 						</tr>
 						<tr>
-							<td class="text-center lead"><i class="fas fa-database"></i></td>
-							<td class="align-middle" colspan="3">Sybase, MSSQL, PL/SQL, MySQL, PostgreSQL, H2, Oracle TimesTen, AWS Relational Database Service</td>
+							<td class="text-center lead max-w-30"><i class="fas fa-adjust"></i></td>
+							<td class="align-middle">Simplicity</td>
 						</tr>
 						<tr>
-							<td class="text-center lead"><i class="fas fa-server"></i></td>
-							<td class="align-middle">Tomcat, WildFly, WebLogic, AWS Elastic Beanstalk, VPS</td>
-							<td class="text-center lead"><i class="fab fa-js-square"></i></td>
-							<td class="align-middle">JavaScript, HTML, CSS, Bootstrap, jQuery</td>
-						</tr>
-						<tr>
-							<td class="text-center lead"><i class="fas fa-project-diagram"></i></td>
-							<td class="align-middle">OOP, SOLID, Design Patterns, TDD, Functional Programming</td>
-							<td class="text-center lead"><i class="fas fa-code"></i></td>
-							<td class="align-middle">RESTful API, SOAP, XML, SAX, JSON, CVS</td>
-						</tr>
-						<tr>
-							<td class="text-center lead"><i class="fas fa-code-branch"></i></td>
-							<td class="align-middle">Git, CVS, SVN, Maven, Nexus, Jenkins, Hudson, Bamboo, Ant</td>
-							<td class="text-center lead"><i class="fas fa-pencil-alt"></i></td>
-							<td class="align-middle">Regular Expressions, Markdown</td>
-						</tr>
-						<tr>
-							<td class="text-center lead"><i class="fas fa-chalkboard-teacher"></i></td>
-							<td class="align-middle">Agile Methodology, Scrum Framework, Kanban, Lean Startup</td>
-							<td class="text-center lead"><i class="fas fa-mobile-alt"></i></td>
-							<td class="align-middle">Android SDK, Flutter, Dart, Unity3D, C#</td>
+							<td class="text-center lead max-w-30"><i class="fas fa-file-invoice-dollar"></i></td>
+							<td class="align-middle">Results</td>
 						</tr>
 					<tbody>
 				</table>
@@ -230,6 +247,12 @@
 						</tr>
 						<tr>
 							<td class="text-justify" colspan="2">
+								<ul>
+									<li>Developing custom Odoo modules for special requirements of companies.
+										<br>
+										<small class="text-muted">Odoo, Python, JavaScript, PostgreSQL, Docker, Git</small>
+									</li>
+								</ul>
 							</td>
 						</tr>
 						<tr>
