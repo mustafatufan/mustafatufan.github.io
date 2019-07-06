@@ -235,7 +235,7 @@
 					<thead>
 						<tr>
 							<th colspan="2" scope="col">
-								<p class="h3">Experience <span id="total" class="text-muted text-nowrap small d-print-none"></span></p>
+								<p class="h3">Experience <span id="totalExperience" class="text-muted text-nowrap small d-print-none"></span></p>
 							</th>
 						</tr>
 					</thead>
@@ -252,7 +252,7 @@
 										<b>Software Developer</b> at <a href="https://avalah.ee">Avatud Lahendused OÜ</a><span class="text-muted"> in Tartu, Estonia</span>
 									</div>
 									<div>
-										May 2019 - <b>Current</b> <span id="diff" class="text-muted text-nowrap small d-print-none"></span>
+										May 2019 - <b>Current</b> <span id="currentExperience" class="text-muted text-nowrap small d-print-none"></span>
 									</div>
 								</div>
 							</td>
@@ -417,47 +417,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
-	<script>
-		function printThisPage() {
-			$('#printButton').tooltip('hide')
-			window.print();
-		}
-
-		$(function() {
-			$('[data-toggle="tooltip"]').tooltip()
-		})
-	</script>
-	<script type="application/javascript">
-		$(document).ready(function () {
-			var startsLast = moment('2019-05-01 00:00:00');
-			var endsLast = moment();
-			document.getElementById("diff").innerText = calcDate(startsLast, endsLast);
-
-			var startsTotal = moment('2016-03-01 00:00:00');
-			var endsTotal = moment();
-			document.getElementById("total").innerText = calcDate(startsTotal, endsTotal);
-		});
-
-		function calcDate(starts, ends) {
-			var duration = moment.duration(ends.diff(starts))
-			months = duration.months() + 1;
-			years = duration.years();
-			diff = ''
-			if (years > 0) {
-				diff = years.toString() + ' year';
-				if (years > 1) {
-					diff += 's'
-				}
-			}
-			if (months > 0) {
-				if (years > 0) {
-					diff += ', '
-				}
-				diff += months.toString() + ' months';
-			}
-			return '(' + diff + ')';
-		}
-	</script>
+	<script src="js/experience-duration.js"></script>
 </body>
 
 </html>
