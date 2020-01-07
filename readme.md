@@ -1,7 +1,7 @@
 > A perfect resume did not exi...
 
 <p align="center">
-	<img width="192" height="192" src="https://tufan.ee/images/icon.png">
+	<img width="192" height="192" src="https://tufan.ee/images/icon_domain.svg">
 </p>
 
 ---
