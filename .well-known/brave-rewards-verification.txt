@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: tufan.ee
+Token: edd36a951003973c7be07c32d3aeb8493c02d0eba7a44d8a3bfb85e47f63b0c3
