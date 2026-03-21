@@ -10,6 +10,16 @@ body {
 	.content-width {
 		max-width: 100%;
 	}
+
+	@page {
+		margin: 0.5in;
+
+		@bottom-center {
+			content: counter(page) "/" counter(pages);
+			font-size: 10pt;
+			color: #6c757d;
+		}
+	}
 }
 
 .max-w-30 {
