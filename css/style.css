@@ -2,8 +2,22 @@ body {
 	font-family: sans-serif;
 }
 
+.content-width {
+	max-width: 1024px;
+}
+
+@media print {
+	.content-width {
+		max-width: 100%;
+	}
+}
+
 .max-w-30 {
 	width: 30px !important;
+}
+
+.text-justify {
+	text-align: justify;
 }
 
 a:link {

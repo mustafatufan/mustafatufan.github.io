@@ -5,11 +5,10 @@
 </p>
 
 ---
-# Single Page Printable Resume Website
+# Printable Resume Website
 [**`tufan.ee`**](https://tufan.ee) is my resume website that is hosted on Github Pages.
 
 ## Rules
-- Single page
 - Printable
 - Must represent whole career, experience and skills
 - Clear & minimal
