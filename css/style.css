@@ -11,6 +11,10 @@ body {
 		max-width: 100%;
 	}
 
+	thead {
+		display: table-row-group;
+	}
+
 	@page {
 		margin: 0.5in;
 
