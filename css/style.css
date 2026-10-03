@@ -30,6 +30,10 @@ body {
 	width: 30px !important;
 }
 
+.table td ul {
+	margin-bottom: 0;
+}
+
 .text-justify {
 	text-align: justify;
 }
