@@ -25,6 +25,7 @@ My resume lives on its own site, [mustafatufan.de](https://mustafatufan.de). Unt
 ## Editing
 - Change the links: edit the `<a>` elements inside `<nav class="links">` in `index.html`.
 - Change the note: edit the `<div class="note">` element below the links in `index.html`.
+- After changing the page: set `dateModified` in the structured data in `index.html` and `<lastmod>` in `sitemap.xml` to the new date. Keep the meta description, the Open Graph description and the structured data in line with what the page shows.
 - Change colours: edit the variables in `:root` at the top of `css/style.css`.
 
 ## License
