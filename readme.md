@@ -4,7 +4,7 @@
 
 ---
 # tufan.ee
-[**`tufan.ee`**](https://tufan.ee) is my personal hub, hosted on GitHub Pages. It shows my name and three links: my resume, LinkedIn and GitHub.
+[**`tufan.ee`**](https://tufan.ee) is my personal hub, hosted on GitHub Pages. It shows my name, three links (my resume, LinkedIn and GitHub) and a short note with my new resume address, email address and phone number.
 
 My resume lives on its own site, [mustafatufan.de](https://mustafatufan.de). Until commit `027b374` this repository was the English resume; that version stays in the git history.
 
@@ -16,7 +16,7 @@ My resume lives on its own site, [mustafatufan.de](https://mustafatufan.de). Unt
 ## Structure
 | File | Purpose |
 |---|---|
-| `index.html` | The hub: name, title and the three links |
+| `index.html` | The hub: name, title, the three links and the note |
 | `css/style.css` | All styles, colours as CSS variables at the top |
 | `404.html` | Shown by GitHub Pages for unknown addresses |
 | `images/` | Favicon, social preview photo and the icon shown in this readme |
@@ -24,6 +24,7 @@ My resume lives on its own site, [mustafatufan.de](https://mustafatufan.de). Unt
 
 ## Editing
 - Change the links: edit the `<a>` elements inside `<nav class="links">` in `index.html`.
+- Change the note: edit the `<div class="note">` element below the links in `index.html`.
 - Change colours: edit the variables in `:root` at the top of `css/style.css`.
 
 ## License

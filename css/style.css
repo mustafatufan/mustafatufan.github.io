@@ -81,6 +81,26 @@ a:focus-visible {
 	margin-top: 2.5rem;
 }
 
+.note {
+	max-width: 44rem;
+	margin: 3rem auto 0;
+	color: var(--muted);
+	font-size: 0.875rem;
+}
+
+.note p {
+	margin: 0;
+	text-wrap: balance;
+}
+
+.note p + p {
+	margin-top: 0.35rem;
+}
+
+.note a {
+	white-space: nowrap;
+}
+
 /* ---------- Page not found ---------- */
 
 .page {
