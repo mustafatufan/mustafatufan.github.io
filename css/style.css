@@ -1,20 +1,36 @@
 /* tufan.ee, the personal hub of Mustafa Tufan.
-   Plain CSS: no framework, no scripts, no external requests. */
+   Tokens and styles of the Mustafa Tufan Brand Kit, read off the business card:
+   the token block of the kit's Sites.md, then the rules of its bundle.css that these pages use.
+   Plain CSS: no framework, no scripts, no external requests.
+   Sizes are in rem: 1rem on screen stands for 7.6pt on the card. */
+
+/* ---------- Tokens ---------- */
 
 :root {
+	--white: #ffffff; --navy: #0c447c; --blue: #185fa5; --ink: #2c2c2a; --grey: #444441;
+	--bg: var(--white); --text-strong: var(--ink); --text: var(--grey); --text-muted: #5f5e5a;
+	--accent: var(--blue); --accent-strong: var(--navy);
+	--plate: var(--navy); --on-plate: var(--white); --plate-hover: var(--blue);
+	--line: #d3d1c7; --line-strong: #888780; --focus: var(--blue);
+	--space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.8125rem; --space-4: 1.75rem; --space-5: 2.625rem; --space-6: 5.5rem;
+	--radius-0: 0; --bar-length: 1.32em; --bar-weight: 0.104em;
+	--card-ratio: 85 / 55; --icon-size: 1.06em; --content-width: 64rem; --measure: 40rem; --photo-width: 190px;
+	--font-sans: Poppins, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
 	color-scheme: only light;
-
-	--text: #111111;
-	--muted: #737373;
-	--line: #d4d4d4;
-	--sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
+[data-theme="back"] {
+	--bg: var(--navy); --text-strong: var(--white); --text: var(--white); --text-muted: #b5d4f4;
+	--accent: var(--white); --accent-strong: #b5d4f4;
+	--plate: var(--white); --on-plate: var(--navy); --plate-hover: #b5d4f4;
+	--line: var(--blue); --line-strong: #85b7eb; --focus: var(--white);
 }
+
+/* Poppins 4.004, Latin and Latin Extended, served by the site itself. */
+@font-face { font-family: Poppins; src: url("../fonts/Poppins-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: Poppins; src: url("../fonts/Poppins-Medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+
+/* ---------- Base ---------- */
 
 html {
 	-webkit-text-size-adjust: 100%;
@@ -23,109 +39,473 @@ html {
 
 body {
 	margin: 0;
-	background: #ffffff;
+	background: var(--bg);
 	color: var(--text);
-	font-family: var(--sans);
-	font-size: 1.0625rem;
+	font-family: var(--font-sans);
+	font-size: 1rem;
+	font-weight: 400;
 	line-height: 1.6;
 	-webkit-font-smoothing: antialiased;
 }
 
-a {
-	color: inherit;
+/* The brand has two weights. Bold is Medium. */
+b,
+strong {
+	font-weight: 500;
+}
+
+/* ---------- Faces ----------
+   A page is the front of the card. A band turns it over: navy, and everything on it white. */
+
+.mt-band {
+	background: var(--bg);
+	color: var(--text);
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+
+/* ---------- Type ---------- */
+
+.mt-name {
+	margin: 0;
+	color: var(--text-strong);
+	font-size: 2rem;
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: 0;
+}
+
+.mt-title {
+	margin: 0;
+	color: var(--accent);
+	font-size: 1.125rem;
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+/* ---------- The bar ----------
+   Its length and thickness are in em of the name above it. */
+
+.mt-nameblock {
+	font-size: 2rem;
+}
+
+.mt-nameblock::after {
+	content: "";
+	display: block;
+	width: var(--bar-length);
+	height: var(--bar-weight);
+	min-height: 2px;
+	margin-top: var(--space-3);
+	background: var(--accent);
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+
+/* ---------- Links and focus ---------- */
+
+.mt-link {
+	color: var(--accent);
 	text-decoration: underline;
-	text-decoration-color: var(--line);
 	text-decoration-thickness: 1px;
-	text-underline-offset: 0.3em;
+	text-underline-offset: 0.2em;
 }
 
-a:hover {
-	text-decoration-color: currentColor;
+.mt-link:hover {
+	color: var(--accent-strong);
 }
 
-a:focus-visible {
-	outline: 2px solid var(--text);
-	outline-offset: 4px;
-	border-radius: 2px;
+.mt-link:focus-visible,
+.mt-links a:focus-visible,
+.mt-postcard-toggle:focus-visible + .mt-postcard-turn {
+	outline: 2px solid var(--focus);
+	outline-offset: 2px;
+	border-radius: var(--radius-0);
 }
 
-/* ---------- Home ---------- */
+/* ---------- Home page: the band on top, the hub in the rest of the screen ---------- */
 
-.home {
-	display: grid;
-	place-items: center;
+.mt-page {
+	display: flex;
+	flex-direction: column;
 	min-height: 100vh;
 	min-height: 100svh;
-	padding: 2rem 1.5rem 12vh;
+}
+
+/* The line at the top of the page: small type on a band, the back of the card. */
+.mt-memorial {
+	padding: var(--space-2) var(--space-3);
+	font-size: 0.875rem;
+	line-height: 1.5;
 	text-align: center;
 }
 
-.home h1 {
-	margin: 0;
-	font-size: clamp(2.25rem, 1.5rem + 4vw, 3.5rem);
-	font-weight: 600;
-	letter-spacing: -0.03em;
-	line-height: 1.1;
-}
-
-.role {
-	margin: 0.75rem 0 0;
-	color: var(--muted);
-}
-
-.links {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 0.5rem 2rem;
-	margin-top: 2.5rem;
-}
-
-.note {
-	max-width: 44rem;
-	margin: 3rem auto 0;
-	color: var(--muted);
-	font-size: 0.875rem;
-}
-
-.note p {
+.mt-memorial p {
 	margin: 0;
 	text-wrap: balance;
 }
 
-.note p + p {
-	margin-top: 0.35rem;
+/* ---------- Hub: the home page ----------
+   The kit lays the hub out as the front of the card, left on the margin.
+   This page is centred instead, as it was before the brand: Mustafa's decision. */
+
+.mt-hub {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: var(--space-5);
+	flex: 1 0 auto;
+	padding: var(--space-5) var(--space-5) max(var(--space-5), 12vh);
+	text-align: center;
 }
 
-.note a {
+/* Centred, the bar stands under the middle of the name block. */
+.mt-hub .mt-nameblock::after {
+	margin-inline: auto;
+}
+
+/* The links stand in one row of columns of equal width, so the row is even around the middle.
+   Each link is its name with its address under it. */
+.mt-links {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;
+	gap: var(--space-3) var(--space-4);
+	width: max-content;
+	max-width: 100%;
+	margin: 0 auto var(--space-4);
+	padding: 0;
+	list-style: none;
+}
+
+.mt-links a {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	color: var(--text-strong);
+	font-weight: 500;
+	line-height: 1.5;
+	text-decoration: none;
+}
+
+.mt-links a span {
+	color: var(--text-muted);
+	font-size: 0.875rem;
+	font-weight: 400;
+}
+
+.mt-links a:hover,
+.mt-links a:hover span {
+	color: var(--accent);
+}
+
+/* The note under the links: body copy, as wide as prose, with lines of even length.
+   An address in it is never broken across lines. */
+.mt-copy {
+	max-width: var(--measure);
+	margin: 0 auto;
+	text-wrap: balance;
+}
+
+.mt-copy a {
 	white-space: nowrap;
 }
 
-/* ---------- Page not found ---------- */
+/* ---------- Postcard: the view from Tallinn ----------
+   Not in the kit, which knows one photograph and one typeface: Mustafa's decision.
+   The front is the photograph with a white edge. The back carries a stamp, a message and
+   an address, the handwriting in navy as ink.
+   The card is a scale model of a real postcard, A6, 148 by 105 mm. Everything on its back is
+   measured in cqw, hundredths of the card's width, so the back looks the same at every size.
+   Each cqw value follows a rem value for browsers that do not know the unit.
+   The card is drawn as one that has travelled: it lies a little askew and slightly bent, its
+   front is glossy, its corners are worn. That takes shadows, gradients and a paper tint,
+   which the kit rules out everywhere else: Mustafa's decision, for this card only.
+   The rules follow the card: the card and its turning, the two sides, the front, the back
+   with its message, stamp and address, then light and wear, then the line under the card. */
 
-.page {
-	width: min(100% - 3rem, 40rem);
-	margin-inline: auto;
-	padding: 2rem 0 4rem;
-}
+@font-face { font-family: Caveat; src: url("../fonts/Caveat-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 
-.page-header {
-	color: var(--muted);
-	font-size: 0.95rem;
-}
+/* --- The card and its turning --- */
 
-.prose {
-	margin-top: 3rem;
-}
-
-.prose h1 {
-	margin: 0 0 1.25rem;
-	font-size: clamp(2rem, 1.5rem + 2.5vw, 2.75rem);
-	font-weight: 600;
-	letter-spacing: -0.03em;
-	line-height: 1.1;
-}
-
-.prose p {
+/* The colours that only this card has, as red, green, blue for use with an opacity:
+   shade for shadows, creases and the bend, stain for smudges, light for gloss and scratches. */
+.mt-postcard {
+	--shade: 44, 44, 42;
+	--stain: 120, 90, 50;
+	--light: 255, 255, 255;
+	--paper: #fdfcf8;
+	width: 100%;
+	max-width: 27rem;
 	margin: 0;
+}
+
+/* This box stands still, so the card does not flicker under the pointer while it turns.
+   It is the measure for the back: 1cqw is one hundredth of its width. It lies a little askew. */
+.mt-postcard-flip {
+	position: relative;
+	perspective: 75rem;
+	container-type: inline-size;
+	transform: rotate(-1.2deg);
+}
+
+/* A checkbox turns the card: a tap, a click or the space key turns it over, the same again
+   turns it back. The checkbox is out of sight but still takes the keyboard. */
+.mt-postcard-toggle {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: 0;
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* Its label lies over the whole card and takes the pointer. */
+.mt-postcard-turn {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* Both sides lie in the same cell, in the shape of the card. */
+.mt-postcard-sides {
+	display: grid;
+	grid-template-rows: 1fr;
+	aspect-ratio: 148 / 105;
+	transform-style: preserve-3d;
+	transition: transform 0.6s ease;
+}
+
+.mt-postcard-toggle:checked ~ .mt-postcard-sides {
+	transform: rotateY(180deg);
+}
+
+/* Under a mouse the card also turns while the pointer is over it. A touch screen has no hover
+   that ends, so there the checkbox alone turns the card. */
+@media (hover: hover) and (pointer: fine) {
+	.mt-postcard-flip:hover .mt-postcard-sides {
+		transform: rotateY(180deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.mt-postcard-sides {
+		transition: none;
+	}
+}
+
+/* --- The two sides --- */
+
+/* The edge of the paper is a hairline with a thin shadow under it. */
+.mt-postcard-front,
+.mt-postcard-back {
+	grid-area: 1 / 1;
+	box-sizing: border-box;
+	border: 1px solid var(--line);
+	box-shadow: 0 1px 3px rgba(var(--shade), 0.28);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+/* --- The front --- */
+
+/* Coated card. Each corner is worn round by a different amount. */
+.mt-postcard-front {
+	position: relative;
+	border-radius: 0.2rem 0.3rem 0.25rem 0.4rem;
+	border-radius: 0.7cqw 1.2cqw 0.9cqw 1.5cqw;
+	background: var(--bg);
+}
+
+/* The photograph fills the card inside a white edge and is cut to its shape, not stretched. */
+.mt-postcard-front img {
+	position: absolute;
+	top: var(--space-2);
+	left: var(--space-2);
+	width: calc(100% - 2 * var(--space-2));
+	height: calc(100% - 2 * var(--space-2));
+	object-fit: cover;
+}
+
+/* --- The back --- */
+
+/* Uncoated paper, with the same worn corners seen from behind. The message stands at the left
+   of a hairline, the stamp and the address at the right. */
+.mt-postcard-back {
+	display: grid;
+	grid-template-columns: 11fr 9fr;
+	grid-template-rows: auto 1fr;
+	padding: var(--space-3);
+	padding: 3cqw;
+	border-radius: 0.3rem 0.2rem 0.4rem 0.25rem;
+	border-radius: 1.2cqw 0.7cqw 1.5cqw 0.9cqw;
+	background: var(--paper);
+	color: var(--accent-strong);
+	font-family: Caveat, "Bradley Hand", "Segoe Print", cursive;
+	font-size: 1.5rem;
+	font-size: 5.55cqw;
+	line-height: 1.2;
+	text-align: left;
+	transform: rotateY(180deg);
+}
+
+.mt-postcard-message {
+	grid-area: 1 / 1 / 3 / 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-right: var(--space-3);
+	padding-right: 3cqw;
+	border-right: 1px solid var(--line);
+}
+
+/* No last line of one word: "pretty" where the browser knows it, else lines of even length. */
+.mt-postcard-message p {
+	margin: 0;
+	text-wrap: balance;
+	text-wrap: pretty;
+}
+
+.mt-postcard-message p + p {
+	margin-top: var(--space-3);
+	margin-top: 3cqw;
+}
+
+/* The signature stands close under the last line, at the right of the message. */
+.mt-postcard-message .mt-postcard-signature {
+	margin-top: var(--space-1);
+	margin-top: 1cqw;
+	text-align: right;
+}
+
+/* The stamp is a drawing in index.html: a perforated stamp of Düsseldorf in the card's inks,
+   with a round postmark over its left edge. Its type is printed, so it is Poppins.
+   It is drawn to scale, 2 units to the millimetre: the stamp 31.80 by 30.13 mm, the postmark 28 mm.
+   On a card 148 mm wide the stamp is 21.5% of the width; the drawing with the postmark is 35.7%. */
+.mt-postcard-stamp {
+	grid-area: 1 / 2;
+	justify-self: end;
+	display: block;
+	width: 9.5rem;
+	width: 35.7cqw;
+	height: auto;
+	font-family: var(--font-sans);
+}
+
+/* The address, written on three ruled lines at the lower right:
+   street and house, postcode and town, then the country in capitals, as the post asks. */
+.mt-postcard-address {
+	grid-area: 2 / 2;
+	align-self: end;
+	margin: 0;
+	padding: 0 0 var(--space-2) var(--space-3);
+	padding: 0 0 2cqw 3cqw;
+}
+
+.mt-postcard-address span {
+	display: block;
+	padding-left: 1.5cqw;
+	border-bottom: 1px solid var(--line);
+	line-height: 1.35;
+}
+
+.mt-postcard-address span:last-child {
+	text-transform: uppercase;
+}
+
+/* --- Light and wear --- */
+
+/* The card is slightly bent: its lower corners stand off the page and throw a shadow under them,
+   while its middle lies flat. The shadow belongs to each side, so it turns with the card. */
+.mt-postcard-front::before,
+.mt-postcard-back::before {
+	content: "";
+	position: absolute;
+	top: 100%;
+	right: 0;
+	left: 0;
+	height: 1.1rem;
+	height: 4.2cqw;
+	pointer-events: none;
+	background:
+		radial-gradient(ellipse 36% 100% at 10% 0, rgba(var(--shade), 0.45), transparent 72%),
+		radial-gradient(ellipse 36% 100% at 90% 0, rgba(var(--shade), 0.45), transparent 72%);
+}
+
+/* What the journey and the light leave on each side lies over it and takes no pointer. */
+.mt-postcard-front::after,
+.mt-postcard-back::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	pointer-events: none;
+}
+
+/* On the front, from top to bottom: two fine scratches, the bent corner at the lower right,
+   the gloss as a band of light with a fainter one beside it, and the shade where the card bends away. */
+.mt-postcard-front::after {
+	background:
+		linear-gradient(101deg, transparent 49.7%, rgba(var(--light), 0.5) 50%, transparent 50.3%) 16% 80% / 26% 9% no-repeat,
+		linear-gradient(84deg, transparent 49.6%, rgba(var(--light), 0.38) 50%, transparent 50.4%) 72% 28% / 18% 14% no-repeat,
+		linear-gradient(315deg, rgba(var(--light), 0.3) 0 3.4cqw, rgba(var(--shade), 0.32) 3.4cqw 3.65cqw, transparent 4cqw),
+		linear-gradient(115deg, transparent 24%, rgba(var(--light), 0.26) 34%, rgba(var(--light), 0.05) 41%, transparent 50%),
+		linear-gradient(115deg, transparent 64%, rgba(var(--light), 0.1) 70%, transparent 76%),
+		linear-gradient(90deg, rgba(var(--shade), 0.12), transparent 14%, transparent 78%, rgba(var(--shade), 0.16));
+}
+
+/* On the back, from top to bottom: the same bent corner seen from behind, two faint smudges,
+   the shade of the bend, and the grain of the paper. */
+.mt-postcard-back::after {
+	background:
+		linear-gradient(45deg, rgba(var(--shade), 0.06) 0 3.4cqw, rgba(var(--shade), 0.24) 3.4cqw 3.65cqw, transparent 4cqw),
+		radial-gradient(ellipse 30% 18% at 60% 90%, rgba(var(--stain), 0.08), transparent 70%),
+		radial-gradient(ellipse 14% 24% at 6% 28%, rgba(var(--stain), 0.07), transparent 70%),
+		linear-gradient(90deg, rgba(var(--shade), 0.1), transparent 14%, transparent 80%, rgba(var(--shade), 0.08)),
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.17 0 0 0 0 0.17 0 0 0 0 0.16 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+/* --- The line under the card --- */
+
+.mt-postcard figcaption {
+	margin-top: var(--space-4);
+	color: var(--text-muted);
+	font-size: 0.875rem;
+	line-height: 1.5;
+	text-wrap: balance;
+}
+
+/* ---------- Prose: page not found ----------
+   A column as wide as prose, in the middle of the page, as before the brand. */
+
+.mt-prose {
+	box-sizing: border-box;
+	max-width: calc(var(--measure) + 2 * var(--space-5));
+	margin-inline: auto;
+	padding: var(--space-5);
+}
+
+.mt-prose p {
+	margin: var(--space-3) 0 0;
+}
+
+/* ---------- Small screens ----------
+   Where the links do not fit in one row inside the margin, they stand under each other. */
+
+@media (max-width: 49.99rem) {
+	.mt-links {
+		grid-auto-flow: row;
+	}
+}
+
+/* On a narrow screen the postcard is wider than the text above it: it reaches into the page
+   margin and leaves space-3 at each side, so that the handwriting on its back stays readable. */
+@media (max-width: 29.99rem) {
+	.mt-postcard {
+		width: calc(100% + 2 * (var(--space-5) - var(--space-3)));
+	}
 }
