@@ -35,7 +35,7 @@ The site follows the Mustafa Tufan Brand Kit, which is read off the printed card
 - Change the links: edit the `<a>` elements inside `<ul class="mt-links">` in `index.html`. Each link is its name, then its address in a `<span>`.
 - Change the note: edit the `<p class="mt-copy">` element below the links in `index.html`.
 - Change the postcard: see [Postcard](#postcard) below.
-- After changing the page: set `dateModified` in the structured data in `index.html` and `<lastmod>` in `sitemap.xml` to the new date. Keep the meta description, the Open Graph description and the structured data in line with what the page shows.
+- After changing the page: set `dateModified` in the structured data in `index.html` to the date and time of the change, with the time zone, as in `2026-11-22T05:15:00+03:00` (Google's test rejects a date alone), and `<lastmod>` in `sitemap.xml` to the date. Keep the meta description, the Open Graph description and the structured data in line with what the page shows.
 - Change colours, type or spacing: change them in the brand kit first, then copy its token block to the top of `css/style.css`.
 
 ## Postcard
