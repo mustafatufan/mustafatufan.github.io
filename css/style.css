@@ -1,7 +1,7 @@
 /* tufan.ee, the personal hub of Mustafa Tufan.
    Tokens and styles of the Mustafa Tufan Brand Kit, read off the business card:
    the token block of the kit's Sites.md, then the rules of its bundle.css that these pages use.
-   Plain CSS: no framework, no scripts, no external requests.
+   Plain CSS: no framework, and the stylesheet loads nothing from outside the site.
    Sizes are in rem: 1rem on screen stands for 7.6pt on the card. */
 
 /* ---------- Tokens ---------- */

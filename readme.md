@@ -13,8 +13,9 @@ The site follows the Mustafa Tufan Brand Kit, which is read off the printed card
 
 ## Tech Stack
 - Plain HTML and CSS
-- No framework, no JavaScript, no build step
-- No external requests: the fonts are served from `fonts/`
+- No framework, no build step
+- One script: the Google Tag Manager tag (`GTM-PSP5QKGJ`) in the head of both pages, which loads from Google and carries the analytics
+- Everything else is served by the site itself, including the fonts in `fonts/`
 
 ## Structure
 | File | Purpose |
@@ -35,6 +36,7 @@ The site follows the Mustafa Tufan Brand Kit, which is read off the printed card
 - Change the links: edit the `<a>` elements inside `<ul class="mt-links">` in `index.html`. Each link is its name, then its address in a `<span>`.
 - Change the note: edit the `<p class="mt-copy">` element below the links in `index.html`.
 - Change the postcard: see [Postcard](#postcard) below.
+- Change or remove the analytics: it is the block marked "Google Tag Manager" at the top of the `<head>` in `index.html` and `404.html`. What it measures is set up in Tag Manager, not here.
 - After changing the page: set `dateModified` in the structured data in `index.html` to the date and time of the change, with the time zone, as in `2026-11-22T05:15:00+03:00` (Google's test rejects a date alone), and `<lastmod>` in `sitemap.xml` to the date. Keep the meta description, the Open Graph description and the structured data in line with what the page shows.
 - Change colours, type or spacing: change them in the brand kit first, then copy its token block to the top of `css/style.css`.
 
